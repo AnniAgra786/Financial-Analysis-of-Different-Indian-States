@@ -1,0 +1,244 @@
+select top 1 * from Aggregate_Expenditure
+select top 1 * from Capital_Expenditure
+select top 1 * from Gross_Fiscal_Deficits
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--Aggregate_Expenditure
+
+
+select state , 
+([1980-81]+[1981-82]+[1982-83]+[1983-84]+[1984-85]) as '1980-85 Aggregate_Expenditure',
+([1985-86]+[1986-87]+[1987-88]+[1988-89]+[1989-90]) as '1985-90 Aggregate_Expenditure',
+([1990-91]+[1991-92]+[1992-93]+[1993-94]+[1994-95]) as '1990-95 Aggregate_Expenditure', 
+([1995-96]+[1996-97]+[1997-98]+[1998-99]+[1999-00]) as '1995-00 Aggregate_Expenditure',
+([2000-01]+[2001-02]+[2002-03]+[2003-04]+[2004-05])  as '2000-05 Aggregate_Expenditure',
+([2005-06]+[2006-07]+[2007-08]+[2008-09]+[2009-10]) as '2005-10 Aggregate_Expenditure',
+([2010-11]+[2011-12]+[2012-13]+[2013-14]+[2014-15 (RE)]) as '2010-15 Aggregate_Expenditure',
+[2015-16 (BE)] as '2015-16 Aggregate_Expenditure'
+into aggreagete from Aggregate_Expenditure;
+
+
+--Capital_Expenditure
+
+select state , ([1980-81]+[1981-82]+[1982-83]+[1983-84]+[1984-85]) as '1980-85 Capital ',
+([1985-86]+[1986-87]+[1987-88]+[1988-89]+[1989-90]) as '1985-90 Capital ',
+([1990-91]+[1991-92]+[1992-93]+[1993-94]+[1994-95]) as '1990-95 Capital ', 
+([1995-96]+[1996-97]+[1997-98]+[1998-99]+[1999-00]) as '1995-00 Capital ',
+([2000-01]+[2001-02]+[2002-03]+[2003-04]+[2004-05])  as '2000-05 Capital ',
+([2005-06]+[2006-07]+[2007-08]+[2008-09]+[2009-10]) as '2005-10 Capital ',
+([2010-11]+[2011-12]+[2012-13]+[2013-14]+[2014-15 (RE)]) as '2010-15 Capital ',
+[2015-16 (BE)] as '2015-16 Capital '
+into Capital from Capital_Expenditure
+
+
+--Gross_Fiscal_Deficits
+
+
+
+select  Year As 'State' , ([1980-81]+[1981-82]+[1982-83]+[1983-84]+[1984-85]) as '1980-85 Gross_Fiscal_D ',
+([1985-86]+[1986-87]+[1987-88]+[1988-89]+[1989-90]) as '1985-90 Gross_Fiscal_D ',
+([1990-91]+[1991-92]+[1992-93]+[1993-94]+[1994-95]) as '1990-95 Gross_Fiscal_D ', 
+([1995-96]+[1996-97]+[1997-98]+[1998-99]+[1999-00]) as '1995-00 Gross_Fiscal_D ',
+([2000-01]+[2001-02]+[2002-03]+[2003-04]+[2004-05])  as '2000-05 Gross_Fiscal_D ',
+([2005-06]+[2006-07]+[2007-08]+[2008-09]+[2009-10]) as '2005-10 Gross_Fiscal_D ',
+([2010-11]+[2011-12]+[2012-13]+[2013-14]+[2014-15 (RE)]) as '2010-15 Gross_Fiscal_D ',
+[2015-16 (BE)] as '2015-16 Gross_Fiscal_D '
+into Gross_Fiscal from Gross_Fiscal_Deficits
+
+
+--Nominal_GSDP_Series
+
+select  State , 
+([1980-81]+[1981-82]+[1982-83]+[1983-84]+[1984-85]) as '1980-85 Nominal ',
+([1985-86]+[1986-87]+[1987-88]+[1988-89]+[1989-90]) as '1985-90 Nominal ',
+([1990-91]+[1991-92]+[1992-93]+[1993-94]+[1994-95]) as '1990-95 Nominal ', 
+([1995-96]+[1996-97]+[1997-98]+[1998-99]+[1999-00]) as '1995-00 Nominal ',
+([2000-01]+[2001-02]+[2002-03]+[2003-04]+[2004-05])  as '2000-05 Nominal ',
+([2005-06]+[2006-07]+[2007-08]+[2008-09]+[2009-10]) as '2005-10 Nominal ',
+([2010-11]+[2011-12]+[2012-13]+[2013-14]+[2014-15]) as '2010-15 Nominal',
+[2015-16] as '2015-16 Nominal '
+into Nominal_GSDP from Nominal_GSDP_Series
+
+
+-- Own_Tax_Revenues
+
+select  State ,
+([1980-81]+[1981-82]+[1982-83]+[1983-84]+[1984-85]) as '1980-85 Own ',
+([1985-86]+[1986-87]+[1987-88]+[1988-89]+[1989-90]) as '1985-90 Own ',
+([1990-91]+[1991-92]+[1992-93]+[1993-94]+[1994-95]) as '1990-95 Own ', 
+([1995-96]+[1996-97]+[1997-98]+[1998-99]+[1999-00]) as '1995-00 Own ',
+([2000-01]+[2001-02]+[2002-03]+[2003-04]+[2004-05])  as '2000-05 Own ',
+([2005-06]+[2006-07]+[2007-08]+[2008-09]+[2009-10]) as '2005-10 Own',
+([2010-11]+[2011-12]+[2012-13]+[2013-14]+[2014-15]) as '2010-15 Own',
+[2015-16] as '2015-16 Own'
+into Own_Tax from Own_Tax_Revenues
+
+
+--Revenue_Deficits
+
+
+
+
+select  State ,
+([1980-81]+[1981-82]+[1982-83]+[1983-84]+[1984-85]) as '1980-85 Revenue ',
+([1985-86]+[1986-87]+[1987-88]+[1988-89]+[1989-90]) as '1985-90 Revenue ',
+([1990-91]+[1991-92]+[1992-93]+[1993-94]+[1994-95]) as '1990-95 Revenue', 
+([1995-96]+[1996-97]+[1997-98]+[1998-99]+[1999-00]) as '1995-00 Revenue ',
+([2000-01]+[2001-02]+[2002-03]+[2003-04]+[2004-05])  as '2000-05 Revenue',
+([2005-06]+[2006-07]+[2007-08]+[2008-09]+[2009-10]) as '2005-10 Revenue',
+([2010-11]+[2011-12]+[2012-13]+[2013-14]+[2014-15]) as '2010-15 Revenue',
+[2015-16 (RE)] as '2015-16 Revenue'
+into Revenue_Deficit from Revenue_Deficits
+
+
+--Revenue_Expenditure
+
+
+select state , 
+([1980-81]+[1981-82]+[1982-83]+[1983-84]+[1984-85]) as '1980-85 Revenue_Exp ',
+([1985-86]+[1986-87]+[1987-88]+[1988-89]+[1989-90]) as '1985-90 Revenue_Exp ',
+([1990-91]+[1991-92]+[1992-93]+[1993-94]+[1994-95]) as '1990-95 Revenue_Exp ', 
+([1995-96]+[1996-97]+[1997-98]+[1998-99]+[1999-00]) as '1995-00 Revenue_Exp ',
+([2000-01]+[2001-02]+[2002-03]+[2003-04]+[2004-05])  as '2000-05 Revenue_Exp ',
+([2005-06]+[2006-07]+[2007-08]+[2008-09]+[2009-10]) as '2005-10 Revenue_Exp ',
+([2010-11]+[2011-12]+[2012-13]+[2013-14]+[2014-15 (RE)]) as '2010-15 Revenue_Exp ',
+[2015-16 (BE)] as '2015-16 Revenue_Exp '
+into Revenue_Ex from Revenue_Expenditure
+
+
+
+--Social_Sector_Expenditure
+
+
+
+
+select  State ,([1980-81]+[1981-82]+[1982-83]+[1983-84]+[1984-85]) as '1980-85 Social_Sector_Ex '
+,([1985-86]+[1986-87]+[1987-88]+[1988-89]+[1989-90]) as '1985-90 Social_Sector_Ex ',
+([1990-91]+[1991-92]+[1992-93]+[1993-94]+[1994-95]) as '1990-95 Social_Sector_Ex', 
+([1995-96]+[1996-97]+[1997-98]+[1998-99]+[1999-00]) as '1995-00 Social_Sector_Ex ',
+([2000-01]+[2001-02]+[2002-03]+[2003-04]+[2004-05])  as '2000-05 Social_Sector_Ex',
+([2005-06]+[2006-07]+[2007-08]+[2008-09]+[2009-10]) as '2005-10 Social_Sector_Ex',
+([2010-11]+[2011-12]+[2012-13]+[2013-14]+[2014-15]) as '2010-15 Social_Sector_Ex',
+[2015-16 (RE)] as '2015-16 Social_Sector_Ex'
+into Social_Sector from Social_Sector_Expenditure
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------
+--Project Queries
+
+
+--Q1 State the most 2 important financial  metrics as per your analysis
+
+
+
+
+
+select aggreagete.state, 
+                    ([1980-85 Aggregate_Expenditure]-[1980-85 Own]) as'expend_over_taxes 1980-85',
+                     ([1985-90 Aggregate_Expenditure]-[1985-90 Own ]) as'expend_over_taxes 1985-90',
+					 ([1990-95 Aggregate_Expenditure]-[1990-95 Own ]) as'expend_over_taxes 1990-95',
+                     ([1995-00 Aggregate_Expenditure]-[1995-00 Own ]) as 'expend_over_taxes 1995-00',
+                     ([2000-05 Aggregate_Expenditure]-[2000-05 Own ]) as 'expend_over_taxes 2000-05',
+                     ([2005-10 Aggregate_Expenditure]-[2005-10 Own ]) as 'expend_over_taxes 2005-10',
+					 ([2010-15 Aggregate_Expenditure]-[2010-15 Own]) as 'expend_over_taxes 2010-15',
+					 ([2015-16 Aggregate_Expenditure]-[2015-16 Own]) as 'expend_over_taxes 2015-16'
+from aggreagete join Own_Tax on aggreagete.state=Own_Tax.state ;
+
+
+--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* From this we can easily that the taxes which are come various sources are not sufficient for the expenditure of the goverment
+and goverment need more income sources to expend */
+
+
+		   
+		   
+		   
+		   
+		   
+select aggreagete.state, 
+                      [1980-85 Aggregate_Expenditure]-[1980-85 Social_Sector_Ex ] as ' 1980-85 Non_Social_Expenditure',
+					  [1985-90 Aggregate_Expenditure]-[1985-90 Social_Sector_Ex ] as ' 1985-90 Non_Social_Expenditure',
+					  [1990-95 Aggregate_Expenditure]-[1990-95 Social_Sector_Ex]  as ' 1990-95 Non_Social_Expenditure',
+					  [1995-00 Aggregate_Expenditure]-[1995-00 Social_Sector_Ex ] as ' 1995-00 Non_Social_Expenditure',
+					  [2000-05 Aggregate_Expenditure]-[2000-05 Social_Sector_Ex]  as ' 2000-05 Non_Social_Expenditure',
+					  [2005-10 Aggregate_Expenditure]-[2005-10 Social_Sector_Ex]  as ' 2005-10 Non_Social_Expenditure',
+					  [2010-15 Aggregate_Expenditure]-[2010-15 Social_Sector_Ex]  as ' 2010-15 Non_Social_Expenditure',
+					  [2015-16 Aggregate_Expenditure]-[2015-16 Social_Sector_Ex]  as  ' 2015-16 Non_Social_Expenditure'
+from aggreagete join Social_Sector on aggreagete .state=Social_Sector.state ;
+
+
+
+
+/*Non_Social_Expenditure help to understanding where our goverments expending taxes and other income other than benifits of the
+people of the state 
+
+-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+--5 year termly analysis of different Financial Metrics*/
+
+
+
+select aggreagete.state,
+                    [1980-85 Aggregate_Expenditure],[1980-85 Capital ],[1980-85 Gross_Fiscal_D ],[1980-85 Nominal ],[1980-85 Own ],RE.[1980-85 Revenue ],[1980-85 Revenue_Exp ],[1980-85 Social_Sector_Ex ]
+                   ,[1985-90 Aggregate_Expenditure],[1985-90 Capital ],[1990-95 Gross_Fiscal_D ],[1985-90 Nominal ],[1985-90 Own ],[1985-90 Revenue ],[1985-90 Revenue_Exp ],[1985-90 Social_Sector_Ex ]
+                   ,[1990-95 Aggregate_Expenditure],[1990-95 Capital ],[1990-95 Gross_Fiscal_D ][1990-95 Nominal ],[1990-95 Own ],[1990-95 Revenue],[1990-95 Revenue_Exp ],[1990-95 Social_Sector_Ex]
+                   ,[1995-00 Aggregate_Expenditure],[1995-00 Capital ],[1995-00 Gross_Fiscal_D ],[1995-00 Nominal ],[1995-00 Own ],[1995-00 Revenue ],[1995-00 Revenue_Exp ],[1995-00 Social_Sector_Ex ],
+                    [2000-05 Aggregate_Expenditure],[2000-05 Capital ],[2000-05 Gross_Fiscal_D ],[2000-05 Nominal ],[2000-05 Own ],[2000-05 Revenue],[2000-05 Revenue_Exp ],[2000-05 Social_Sector_Ex],
+                    [2005-10 Aggregate_Expenditure],[2005-10 Capital ],[2005-10 Gross_Fiscal_D], [2005-10 Nominal ],[2005-10 Own],[2005-10 Revenue],[2005-10 Revenue_Exp ],[2005-10 Social_Sector_Ex]
+                   ,[2010-15 Aggregate_Expenditure],[2010-15 Capital ],[2010-15 Gross_Fiscal_D ],[2010-15 Nominal],[2010-15 Own],[2010-15 Revenue],[2010-15 Revenue_Exp ],[2010-15 Social_Sector_Ex]
+ 
+from aggreagete join Capital on aggreagete.State =Capital.state
+          join Gross_Fiscal on aggreagete.State =Gross_Fiscal.state
+          join Nominal_GSDP on aggreagete.State =Nominal_GSDP.State
+          join Own_Tax on aggreagete.State =Own_Tax.state
+          join Social_Sector on aggreagete.State =Social_Sector.State
+		  join Revenue_Ex on aggreagete.State =Revenue_Ex.State
+		  join Revenue_Deficit RE on RE.State=aggreagete.state
+
+
+
+--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+------------------------------------------------------------------------------------------------------------------------------------
+--Top 10 states with highest gross fiscal deficit
+
+select top(10)* from Gross_Fiscal 
+		  order by [2010-15 Gross_Fiscal_D ] desc;
+
+
+
+--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+--Give at least 2 insights that are not mentioned above and are not clearly visible from the data
+
+
+--1st insight
+
+
+select * from [dbo].[Revenue_Deficit]where [1980-85 Revenue ] <=0 and
+[1985-90 Revenue ] <=0 and 
+[1990-95 Revenue]<=0 and 
+[1995-00 Revenue ]<= 0 and 
+[2000-05 Revenue]<= 0 and 
+[2005-10 Revenue]<=0 and
+[2010-15 Revenue]<=0 and 
+[2015-16 Revenue]<=0;
+
+-- so these states have excess money other than tax they can spent money on sociol welfare  of the people of the state 
+
+
+select top 10 State,
+                  ([1980-85 Own ]+[1985-90 Own ]+
+                   [1990-95 Own ]+[1995-00 Own ]+[2000-05 Own ]+[2005-10 Own]+
+                   [2010-15 Own]+[2015-16 Own])as total
+from [dbo].[Own_Tax]
+order by total desc
+
+
+
+--From this insight we can easily know which state has received highest tex In which Maharashtra has toped the list 
