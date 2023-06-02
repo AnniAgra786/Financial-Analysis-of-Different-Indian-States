@@ -68,7 +68,9 @@ This Dashboard is really helpfull to compare Different Financial Statistics of t
 
 
 
-## __________Results and Insights__________ ![insights1](https://github.com/AnniAgra786/Financial-Analysis-of-Different-Indian-States/assets/109506450/c619e987-32c4-4be5-88f4-1ee068c0f705)
+## __________Results and Insights__________  ![Insight4](https://github.com/AnniAgra786/Financial-Analysis-of-Different-Indian-States/assets/109506450/9ce6e0af-36b5-49cf-acb7-c49b6f1e839d)
+
+
 
 The analysis of the financial data revealed several important insights:
 
